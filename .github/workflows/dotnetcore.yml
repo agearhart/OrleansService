@@ -19,5 +19,9 @@ jobs:
         dotnet-version: 3.1.101
     - name: Build with dotnet
       run: dotnet build --configuration Release
+      
+  test:
+    runs-on: ubuntu-latest
+    steps:
     - name: Run Tests
       run: dotnet test GrainTests
