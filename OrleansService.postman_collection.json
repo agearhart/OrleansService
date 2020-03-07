@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "feb24892-d776-482f-97e4-fdf83f3cf28d",
+		"name": "OrleansService",
+		"description": "For use in running tests against https://github.com/agearhart/OrleansService",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetGrainId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/home/bob",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"home",
+						"bob"
+					]
+				},
+				"description": "The Hello World of endpoints"
+			},
+			"response": []
+		},
+		{
+			"name": "Force Friends",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/admin/bob/befriend/alice/force",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"admin",
+						"bob",
+						"befriend",
+						"alice",
+						"force"
+					]
+				},
+				"description": "The Hello World of endpoints"
+			},
+			"response": []
+		},
+		{
+			"name": "Notify Friends",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/home/alice/notify/bloop",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"home",
+						"alice",
+						"notify",
+						"bloop"
+					]
+				},
+				"description": "The Hello World of endpoints"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
