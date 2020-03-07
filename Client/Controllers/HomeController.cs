@@ -57,6 +57,43 @@ namespace Client.Controllers
             return Json(response);
         }
 
+        /// <summary>
+        /// Request the friendship of another account
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("home/{id}/befriend/{friendId}", Name="RequestFriendship")]
+        async public Task<JsonResult> RequestFriendship(string id, string friendId)
+        {
+            await _orleansClient.Connect();
+
+            var grain = _orleansClient.GetGrain<IAccount>(id);
+            var response = await grain.DecideFriendshipRequest(friendId);
+
+            _logger.LogInformation($"Friendship has been {}" (response) ? "accepted" : "rejected");
+
+            return Json(response);
+        }
+
+        /// <summary>
+        /// Request the friendship of another account
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpGet("home/{id}/notifyFriends/{update}", Name="NotifyFriends")]
+        async public Task<JsonResult> NotifyFriends(string id, string update)
+        {
+            await _orleansClient.Connect();
+
+            var grain = _orleansClient.GetGrain<IAccount>(id);
+            await grain.NotifyFriends(update);
+
+            _logger.LogInformation($"Friendship has been {}" (response) ? "accepted" : "rejected");
+
+            return Json(response);
+        }
+
+
         public IActionResult Index()
         {
             return View();
