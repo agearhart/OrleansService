@@ -26,5 +26,11 @@ namespace GrainTests
 
             Assert.Equal($"I am grain {id}", result);
         }
+
+        [Fact]
+        public void ThisTestFails()
+        {
+            Assert.True(false, "Intentional failure to get git workflow");
+        }
     }
 }
